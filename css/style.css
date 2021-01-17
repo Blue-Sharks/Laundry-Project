@@ -1,15 +1,93 @@
 /* 
 osama yousef  2:12 PM
-Purple : #251641
+    Purple : #251641
 Pinned by osama yousef
 2:12
-Dark Blue : #0A2A73
+    Dark Blue : #0A2A73
 Pinned by osama yousef
 2:13
-highlight text white background : #44D382
+    highlight text white background : #44D382
 Pinned by osama yousef
 2:14
-light Blue : #5ADDE6
+    light Blue : #5ADDE6
 Pinned by osama yousef
 2:14
-highlight text Dark back ground : #95E7B6 */
+    highlight text Dark back ground : #95E7B6 */
+    *{
+        box-sizing: border-box;
+    }
+h2{
+    color: #CFEC12;
+    background-color: #0A2A73;
+    font-size: x-large;
+    font-weight: 700;
+    padding: 3px;
+    text-align: center;
+}
+
+#sec1, #sec2 {
+    display: block;
+}
+
+.image img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    background-color: #85b6f1;
+    overflow: auto; 
+ 
+}
+.dropdown{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    padding-top: 5%;
+
+}
+
+.dropdown select, .dropdown select option {
+    padding : 5%;
+    font-size: large;
+    background-color: silver;
+    color: #0A2A73;
+    font-weight: 900;
+}
+
+
+.container #offerSquare1 ,.container #offerSquare2 ,.container #offerSquare3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin: 2%;
+    border-radius: 50%;
+  
+}
+
+ ul  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color:#DF7070;
+    position: relative;
+    padding: 20px;
+
+}
+ul li{
+    list-style-type: square;
+    color: #D3F10D;
+    font-size: x-large;
+    font-weight: 700;
+    margin-left: 5%;
+}
+ul li:last-child{
+    padding-bottom: 80px;
+}
+
+
+.container{
+    display: flex;
+}
