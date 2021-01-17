@@ -8,18 +8,39 @@
 </head>
 
 <body>
-    <Head></Head>
-    <nav></nav>
-    <div>
-        <fieldset>
-            <legend>Order Form </legend>
-            <label for="Name"> Name:
-                <input type="text" id="Name" name="Name">
-            </label> <br> <br>
-            <Label for="contact"> Contact Number:
-                <input type="number" id="contact" name="contact">
-            </Label>
-        </fieldset>
+    <header>
+        <nav></nav>
+    </header>
+
+    <div class="order-form">
+        <form action="">
+            <fieldset>
+                <legend>Order Form </legend>
+                <label for="name"> Name:
+                    <input type="text" id="Name" name="Name">
+                </label> <br> <br>
+                <Label for="contact"> Contact Number:
+                    <input type="tel" id="contact" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}" name="contact">
+                </Label> <br> <br>
+                <Label for="address"> Address Information:
+                    <input type="text" id="address" name="address" placeholder="Street no, House No, City">
+                </Label><br> <br>
+                <Label > Please seelect items and quantities <br> <br>
+                    <input type="checkbox" id="T-shirts" name="T-shirts" > T-Shirts <input type="number" min="1" max="30"><br> <br>
+                    <input type="checkbox" id="Pants" name="Pants"> Pants <input type="number" min="1" max="30"><br> <br>
+                    <input type="checkbox" id="Shorts" name="Shorts"> Shorts <input type="number" min="1" max="30"><br> <br>
+                    <input type="checkbox" id="Formal Wear" name="Formal Wear"> Formal Wear <input type="number" min="1" max="30"><br> <br>
+                    <input type="checkbox" id="Socks and Underwear" name="Socks and Underwear"> Socks and Underwear <input type="number" min="1" max="30"><br> <br>
+                    <input type="checkbox" id="Jackets" name="Jackets"> Jackets <input type="number" min="1" max="30"><br> <br>
+                    <input type="checkbox" id="Others" name="Others"> Others <input type="number" min="1" max="30"><br> <br>            
+                </Label>
+                <label for="promo"> Promo Code
+                    <input type="text" id="promo" name="promo">
+                </label> <br> <br>
+                <input type="submit" value="Proceed to Checkout">
+
+            </fieldset>
+        </form>
     </div>
 
     <footer>
