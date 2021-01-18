@@ -1,252 +1,265 @@
-/* 
-osama yousef  2:12 PM
-    Purple : #251641
-Pinned by osama yousef
-2:12
-    Dark Blue : #0A2A73
-Pinned by osama yousef
-2:13
-    highlight text white background : #44D382
-Pinned by osama yousef
-2:14
-    light Blue : #5ADDE6
-Pinned by osama yousef
-2:14
-    highlight text Dark back ground : #95E7B6 */
-
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-h2{
-    color: #CFEC12;
-    background-color: #0A2A73;
-    font-size: x-large;
-    font-weight: 700;
-    padding: 3px;
+#container div h2 {
+  color: #cfec12;
+  background-color: #251641;
+  font-size: x-large;
+  font-weight: 700;
+  padding: 3px;
+  text-align: center;
+}
+
+#sec1,
+#sec2 {
+  display: block;
+}
+
+.image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  background-color: #85b6f1;
+  overflow: auto;
+}
+#dropdown {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  padding-top: 5%;
+}
+
+#dropdown select,
+#dropdown select option {
+  padding: 5%;
+  font-size: large;
+  background-color: silver;
+  color: #251641;
+  font-weight: 900;
+}
+
+#offerSquare1,
+#offerSquare2,
+#offerSquare3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  width: 30%;
+  display: none;
+  margin: 0 auto;
+  border: 1px solid;
+}
+
+#container div ul {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #df7070;
+  position: relative;
+  padding: 20px;
+}
+#container div ul li {
+  list-style-type: square;
+  color: #d3f10d;
+  font-size: x-large;
+  font-weight: 700;
+  margin-left: 5%;
+  border-radius: 10px;
+}
+#container div ul li:last-child {
+  padding-bottom: 80px;
+}
+
+/* #container {
+
+} */
+
+.circle_container {
+  height: 25vw;
+  width: 25vw;
+  border-radius: 40vw;
+  border: 1vw solid #251641;
+  margin: auto;
+}
+.inside_circle {
+  height: 20vw;
+  width: 20vw;
+  border-radius: 23vw;
+
+  background-color: #e6f3fe;
+  margin: auto;
+  margin-top: 4%;
+}
+.inside_circle_text {
+  font-size: 3vw;
+  font-family: "arial black", arial-w01-black, arial-w02-black,
+    "arial-w10 black", sans-serif;
+  margin-top: 7%;
+  width: 18vw;
+  position: absolute;
+  box-sizing: border-box;
+  word-break: break-all;
+  text-align: center;
+  z-index: 30;
+  color: #d3f10d;
+}
+.clothes {
+  height: 20vw;
+  width: 20vw;
+  overflow: auto;
+  margin-left: 0%;
+  margin-top: 3%;
+}
+
+#laundry_shop_1 {
+  margin-top: 12.5%;
+}
+
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+
+.nav {
+  position: fixed;
+  background-color: #251641;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav.active {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active a {
+  color: #000;
+}
+
+.nav.active .container {
+  padding: 10px 0;
+}
+
+.nav a.current,
+.nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/*========================================================================*/
+
+.footer-dark {
+  padding: 50px 0;
+  color: #f0f9ff;
+  background-color: #251641;
+  margin-top: 3%;
+}
+
+.footer-dark h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-dark ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.footer-dark ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .footer-dark .item:not(.social) {
     text-align: center;
-}
-
-#sec1, #sec2 {
-    display: block;
-}
-
-.image img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 45%;
-    background-color: #85b6f1;
-    overflow: auto; 
- 
-}
-#dropdown{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    padding-top: 5%;
-
-}
-
-#dropdown select, #dropdown select option {
-    padding : 5%;
-    font-size: large;
-    background-color: silver;
-    color: #0A2A73;
-    font-weight: 900;
-}
-
-
-#container #offerSquare1 ,#container #offerSquare2 ,#container #offerSquare3{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin: 2%;
-    border-radius: 50%;
-  
-}
-
- ul  {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    background-color:#DF7070;
-    position: relative;
-    padding: 20px;
-
-}
-ul li{
-    list-style-type: square;
-    color: #D3F10D;
-    font-size: x-large;
-    font-weight: 700;
-    margin-left: 5%;
-    border-radius: 10px;
-
-}
-ul li:last-child{
-    padding-bottom: 80px;
-}
-
-
-#container{
-    display: flex;
-    transition: 1s;
-    transform-style: preserve-3d;
-    position: relative;
-    animation: moving ease-in-out 1s infinite alternate;
-    border-radius: 10px;
-border: 1px solid red;
-    
-}
-.circle_container{
-    height: 25vw;
-    width: 25vw;
-    border-radius: 40vw;
-    border:1vw solid #0A2A73;
-    margin: auto;
+    padding-bottom: 20px;
   }
-  .inside_circle{
-    height: 20vw;
-    width: 20vw;
-    border-radius: 23vw;
-  
-    background-color: #E6F3FE;
-    margin: auto;
-    margin-top: 4%;
-  
-  
+}
+
+.footer-dark .item.text {
+  margin-bottom: 36px;
+}
+
+@media (max-width: 767px) {
+  .footer-dark .item.text {
+    margin-bottom: 0;
   }
-  .inside_circle_text{
-    font-size: 3.0vw;
-    font-family :"arial black", arial-w01-black, arial-w02-black, "arial-w10 black", sans-serif;
-     /* margin: 4%; */
-     margin-top: 7%;
-  
-    width:18vw;
-    position: absolute;
-  
-    box-sizing: border-box;
-    /* line-height: 60px; */
-    word-break:break-all;
+}
+
+.footer-dark .item.text p {
+  opacity: 0.6;
+  margin-bottom: 0;
+}
+
+.footer-dark .item.social {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .footer-dark .item.social {
     text-align: center;
-    z-index: 30;
-    color:  #D3F10D;
+    margin-top: 20px;
   }
-  .clothes{
-    /* margin-left: 80px; */
-    height: 20vw;
-    width: 20vw;
-    /* text-align: center; */
-    overflow: auto;
-    /* object-fit: cover; */
-    /* position: relative; */
-    margin-left: 0%;
-    margin-top: 3%;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* *{
-    box-sizing: border-box;
 }
 
-h2{
-    color: #CFEC12;
-    background-color: #0A2A73;
-    font-size: x-large;
-    font-weight: 700;
-    padding: 3px;
-    text-align: center;
+.footer-dark .item.social > a {
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+  margin: 0 8px;
+  color: #fff;
+  opacity: 0.75;
 }
 
-#sec1, #sec2 {
-    display: block;
+.footer-dark .item.social > a:hover {
+  opacity: 0.9;
 }
 
-.image img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 45%;
-    background-color:whitesmoke;
-    overflow: auto; 
- 
+.footer-dark .copyright {
+  text-align: center;
+  padding-top: 24px;
+  opacity: 0.3;
+  font-size: 13px;
+  margin-bottom: 0;
 }
-#dropdown{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    padding-top: 5%;
-
-}
-
-#dropdown select, #dropdown select option {
-    padding : 5%;
-    font-size: large;
-    background-color: silver;
-    color: #0A2A73;
-    font-weight: 900;
-}
-
-
-#container #offerSquare1 ,#container #offerSquare2 ,#container #offerSquare3{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin: 2%;
-    border-radius: 50%;
-  
-}
-
- ul  {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    background-color:#DF7070;
-    position: relative;
-    padding: 20px;
-
-}
-ul li{
-    list-style-type: square;
-    color: #D3F10D;
-    font-size: x-large;
-    font-weight: 700;
-    margin-left: 5%;
-}
-ul li:last-child{
-    padding-bottom: 80px;
-}
-
-
-#container{
-    display: flex;
-}
-
-
- */
+/*=============================================================================*/
