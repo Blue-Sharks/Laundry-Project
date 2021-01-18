@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View statistics</title>
+    <link rel="stylesheet" href="../css/homeStyle.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="container">
+                <h1 class="logo"><a href="#">My Website</a></h1>
+                <ul>
+                    <li><a href="../Index.html" >Home</a></li>
+                    <li><a href="order.html" >OrderPage</a></li>
+                    <li><a href="offers.html">DailyOffer</a></li>
+                    <li><a href="stats.html" class="current">Statistics</a></li>
+                    <li><a href="aboutUs.html" >About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="chart">
+        <canvas id="bar-chart" width="600" height="600">
+
+        </canvas>
+        <form id="show-statistics">
+            <input type="submit"  value="Statistics">
+        </form>
+        
+    
+
+    </section>
+
+    <section class="table">
+
+        <form action="">
+            <label for="password"> Owner's Password:
+                <input type="password" id="password" name="password">
+                <input type="submit" value="Preview results">
+            </label>
+        </form>
+        
+        <table id="owner-table"></table>
+        <form id="show-table">
+            <input type="submit"  value="Owner Table">
+        </form>
+        
+
+    </section>
+
+
+
+
+    <footer>
+
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/Footerscript.js"></script>
+
+  
+
+</body>
+
+</html>

@@ -1,99 +1,234 @@
-"use Strict";
+'use strict';
 
-var dropDown = document.getElementById("dropDown");
-var container = document.getElementById("container");
-var offerSquare1 = document.getElementById("offerSquare1");
-var offerSquare2 = document.getElementById("offerSquare2");
-var offerSquare3 = document.getElementById("offerSquare3");
+var customerArray = [];
+var washingItems = ['T-Shirts', 'Pants', 'Shorts', 'Formal Wear', 'Socks and Underwear', 'Jackets', 'Others'];
+var priceArray = [1, 1.5, 0.75, 2, 0.5, 1.5, 1];
+var placeOrder = document.getElementById("place-order");
+placeOrder.style.display = "none";
+var combinedTotal=0;
+var quanititiesArray=new Array(7).fill(0);
 
-var list = document.createElement("ul");
-var h2 = document.createElement("h2");
 
-container.appendChild(offerSquare1);
-container.appendChild(offerSquare2);
-container.appendChild(offerSquare3);
 
-var clothes = ["Shirts", "Jackects", "Pants", "Skirt/Dress"];
 
-dropDown.addEventListener("change", RenderOffer2);
-
-function RenderOffer2 () {
-  switch (dropDown.options[dropDown.selectedIndex].value) {
-    case `TA's Offers`:
-      // offerSquare1.style.visibility = 'visible';
-      // offerSquare2.style.visibility = 'hidden';
-      // offerSquare3.style.visibility = 'hidden';
-      offerSquare1.style.display= 'block';
-      offerSquare2.style.display= 'none';
-      offerSquare3.style.display= 'none';
-      break;
-  
-    case `Student's Offers`:
-      offerSquare1.style.display= 'none';
-      offerSquare2.style.display= 'block';
-      offerSquare3.style.display= 'none';
-      break;
-  
-    case `Adminstrator Offers`:
-      offerSquare1.style.display= 'none';
-      offerSquare2.style.display= 'none';
-      offerSquare3.style.display= 'block';
-      break;
-      
-    default:
-      break;
-  }
+function CustomerOrder(name, phone, address, choices, checkedValue, promo, total) {
+    this.name = name;
+    this.phone = phone;
+    this.address = address;
+    this.choices = choices;
+    this.promo = promo;
+    this.quantity = checkedValue;
+    this.total = total;
+ 
+    customerArray.push(this);
+    calculateTotalSales(this.total);
+    calculateTotalQuantities(this.quantity);
+    
 
 }
 
-// function RenderOffer() {
-//   console.log(dropDown.options[dropDown.selectedIndex].value);
-//   // container.innerHTML='';
-//   switch (dropDown.options[dropDown.selectedIndex].value) {
-//     case `TA's Offers`:
-//       offerSquare2.innerText= '';
-//       offerSquare3.innerText= '';
+// create local storage to store data 
+function customerData() {
+    localStorage.setItem('customers', JSON.stringify(customerArray));
+    localStorage.setItem("Quantity-ordered", JSON.stringify(quanititiesArray));
+    localStorage.setItem("Total-Sales", JSON.stringify(combinedTotal));
+   
+}
 
-//       h2.textContent = `50% Offer for TA's`;
-//         for (let index = 0; index < clothes.length; index++) {
-//           let li = document.createElement("li");
-//           li.textContent = clothes[index];
-//           list.appendChild(li);
-//         }
-//       offerSquare1.appendChild(h2);
-//       offerSquare1.appendChild(list);
-//     break;
+function calculateTotalSales(total){
+    combinedTotal+= total;
+}
 
-//     case `Student's Offers`:
-//       offerSquare1.innerText= '';
-//       offerSquare3.innerText= '';
-    
-//     h2.textContent = "25% Offer for Students";
-//       for (let index = 0; index < clothes.length; index++) {
-//         let li = document.createElement("li");
-//         li.textContent = clothes[index];
-//         list.appendChild(li);
-//       }
-//       offerSquare2.appendChild(h2);
-//       offerSquare2.appendChild(list);
-//     break;
+function calculateTotalQuantities(quantity){
+    for (let index = 0; index < quantity.length; index++) {
+        var sum = 0;
+        sum += quantity[index]; 
+        quanititiesArray[index] +=sum; 
+    }
 
-//     case `Adminstrator Offers`:
-//       offerSquare1.innerText= '';
-//       offerSquare2.innerText= '';
 
-//       h2.textContent = "10% Offer for Adminstrators";
-//       for (let index = 0; index < clothes.length; index++) {
-//           let li = document.createElement("li");
-//           li.textContent = clothes[index];
-//           list.appendChild(li);
-//         }
-//       offerSquare3.appendChild(h2);
-//       offerSquare3.appendChild(list);
-//       break;
+}
 
-//     default:
-//       console.log("no condition has met in switch case");
-//       break;
-//   }
-// }
+// back up the data from localstorage to object array 
+function retrieveData(){
+
+    if (localStorage.length>0){
+        for(var i = 0; i< localStorage.length; i++){
+            if(localStorage.key(i)==="customers" ){
+                customerArray= JSON.parse(localStorage.getItem("customers"));
+            }
+            else if(localStorage.key(i)==="Quantity-ordered" ){
+                quanititiesArray= JSON.parse(localStorage.getItem("Quantity-ordered"));
+            }
+            else if(localStorage.key(i)==="Total-Sales"){
+                combinedTotal= JSON.parse(localStorage.getItem("Total-Sales"));
+            }
+        }
+    }     
+
+}
+
+var formOrder = document.getElementById("order-from");
+formOrder.addEventListener('submit', addNewCustomer);
+var choices = [];
+var quantity = [];
+
+
+function addNewCustomer(event) {
+    event.preventDefault();
+    var name = event.target.name.value;
+    var phone = event.target.contact.value;
+    var address = event.target.address.value;
+    var numberinput = document.querySelectorAll('input[type=number]');
+
+    for (var i = 0; i < washingItems.length; i++) {
+        if (numberinput[i].value === "") {
+            choices.push(washingItems[i]);
+            quantity.push(0);
+
+        }
+        else {
+            choices.push(washingItems[i]);
+            quantity.push(parseInt(numberinput[i].value));
+        }
+    }
+
+    var promo = event.target.promo.value;
+
+    var promoValue = 0;
+    var promoName = "";
+
+    switch (promo) {
+        case "ST30":
+            promoValue = 0.3;
+            promoName = "ST30";
+            break;
+        case "TA15":
+            promoValue = 0.15;
+            promoName = "TA15";
+            break;
+        case "AD10":
+            promoValue = 0.1;
+            promoName = "AD10";
+            break;
+        default:
+            promoValue = 1;
+            promoName = "None";
+            break;
+    }
+
+    var totalPrice = renderReciept(promoValue);
+
+
+
+    // student 30%  ST30  
+    // Ta 15% TA15
+    // Admin 10% AD10
+
+    var customer = new CustomerOrder(name, phone, address, choices, quantity, promoName, totalPrice);
+
+
+}
+
+function renderReciept(promoValue) {
+    placeOrder.style.display = "block";
+
+    var totalPrice = 0;
+
+    var parent = document.getElementById("reciept");
+    var table = document.createElement("table");
+    table.setAttribute("border", "1");
+    parent.appendChild(table);
+    var headRow = document.createElement("tr");
+    table.appendChild(headRow);
+    var headColumnOne = document.createElement("th");
+    headColumnOne.textContent = "Item";
+    headRow.appendChild(headColumnOne);
+    var headColumnTwo = document.createElement("th");
+    headColumnTwo.textContent = "Amount";
+    headRow.appendChild(headColumnTwo);
+    var headColumnThree = document.createElement("th");
+    headColumnThree.textContent = "Price";
+    headRow.appendChild(headColumnThree);
+    var headColumnFour = document.createElement("th");
+    headColumnFour.textContent = "Item Total";
+    headRow.appendChild(headColumnFour);
+
+
+    for (var j = 0; j < washingItems.length; j++) {
+        if (quantity[j] !== 0) {
+            var bodyRow = document.createElement("tr");
+            table.appendChild(bodyRow);
+
+            var bodyColumnOne = document.createElement("td");
+            bodyColumnOne.textContent = choices[j];
+            bodyRow.appendChild(bodyColumnOne);
+
+            var bodyColumnTwo = document.createElement("td");
+            bodyColumnTwo.textContent = quantity[j];
+            bodyRow.appendChild(bodyColumnTwo);
+
+            var bodyColumnThree = document.createElement("td");
+            bodyColumnThree.textContent = priceArray[j];
+            bodyRow.appendChild(bodyColumnThree);
+
+            var bodyColumnFour = document.createElement("td");
+            bodyColumnFour.textContent = quantity[j] * priceArray[j];
+            bodyRow.appendChild(bodyColumnFour);
+
+
+            totalPrice = totalPrice + quantity[j] * priceArray[j];
+        }
+
+    }
+
+    if (promoValue === 1) {
+        var footerRowOne = document.createElement("tr");
+        table.appendChild(footerRowOne);
+        var footerColumnOne = document.createElement("th");
+        footerColumnOne.setAttribute("colspan", "4");
+        footerColumnOne.textContent = "Total : " + totalPrice + " JD";
+        footerRowOne.appendChild(footerColumnOne);
+    } else {
+        var footerRowOne = document.createElement("tr");
+        table.appendChild(footerRowOne);
+        var footerColumnOne = document.createElement("th");
+        footerColumnOne.setAttribute("colspan", "4");
+        footerColumnOne.textContent = "Total : " + totalPrice + " JD";
+        footerRowOne.appendChild(footerColumnOne);
+
+        var footerRowTwo = document.createElement("tr");
+        table.appendChild(footerRowTwo);
+
+        var footerColumnTwo = document.createElement("th");
+        footerColumnTwo.setAttribute("colspan", "4");
+        footerColumnTwo.textContent = "Total After Discount : " + parseFloat(totalPrice - (totalPrice * promoValue)).toFixed(2) + " JD";
+        footerRowTwo.appendChild(footerColumnTwo);
+
+        var footerRowThree = document.createElement("tr");
+        table.appendChild(footerRowThree);
+
+        var footerColumnThree = document.createElement("th");
+        footerColumnThree.setAttribute("colspan", "4");
+        footerColumnThree.textContent = "Please make sure to have your Uni ID on you at time of Payment";
+        footerRowThree.appendChild(footerColumnThree);
+    }
+
+
+    return totalPrice;
+}
+
+placeOrder.addEventListener('click', function (event) {
+    customerData();
+    alert("Order Submitted");
+    location.reload();
+
+});
+
+retrieveData();
+
+
+
+
+
+
