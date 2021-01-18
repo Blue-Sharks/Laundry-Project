@@ -13,9 +13,165 @@ Pinned by osama yousef
 Pinned by osama yousef
 2:14
     highlight text Dark back ground : #95E7B6 */
-    *{
-        box-sizing: border-box;
-    }
+
+
+*{
+    box-sizing: border-box;
+}
+
+h2{
+    color: #CFEC12;
+    background-color: #0A2A73;
+    font-size: x-large;
+    font-weight: 700;
+    padding: 3px;
+    text-align: center;
+}
+
+#sec1, #sec2 {
+    display: block;
+}
+
+.image img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    background-color: #85b6f1;
+    overflow: auto; 
+ 
+}
+#dropdown{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    padding-top: 5%;
+
+}
+
+#dropdown select, #dropdown select option {
+    padding : 5%;
+    font-size: large;
+    background-color: silver;
+    color: #0A2A73;
+    font-weight: 900;
+}
+
+
+#container #offerSquare1 ,#container #offerSquare2 ,#container #offerSquare3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin: 2%;
+    border-radius: 50%;
+  
+}
+
+ ul  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color:#DF7070;
+    position: relative;
+    padding: 20px;
+
+}
+ul li{
+    list-style-type: square;
+    color: #D3F10D;
+    font-size: x-large;
+    font-weight: 700;
+    margin-left: 5%;
+    border-radius: 10px;
+
+}
+ul li:last-child{
+    padding-bottom: 80px;
+}
+
+
+#container{
+    display: flex;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+    animation: moving ease-in-out 1s infinite alternate;
+    border-radius: 10px;
+border: 1px solid red;
+    
+}
+.circle_container{
+    height: 25vw;
+    width: 25vw;
+    border-radius: 40vw;
+    border:1vw solid #0A2A73;
+    margin: auto;
+  }
+  .inside_circle{
+    height: 20vw;
+    width: 20vw;
+    border-radius: 23vw;
+  
+    background-color: #E6F3FE;
+    margin: auto;
+    margin-top: 4%;
+  
+  
+  }
+  .inside_circle_text{
+    font-size: 3.0vw;
+    font-family :"arial black", arial-w01-black, arial-w02-black, "arial-w10 black", sans-serif;
+     /* margin: 4%; */
+     margin-top: 7%;
+  
+    width:18vw;
+    position: absolute;
+  
+    box-sizing: border-box;
+    /* line-height: 60px; */
+    word-break:break-all;
+    text-align: center;
+    z-index: 30;
+    color:  #D3F10D;
+  }
+  .clothes{
+    /* margin-left: 80px; */
+    height: 20vw;
+    width: 20vw;
+    /* text-align: center; */
+    overflow: auto;
+    /* object-fit: cover; */
+    /* position: relative; */
+    margin-left: 0%;
+    margin-top: 3%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* *{
+    box-sizing: border-box;
+}
+
 h2{
     color: #CFEC12;
     background-color: #0A2A73;
@@ -56,7 +212,7 @@ h2{
 }
 
 
-.container #offerSquare1 ,.container #offerSquare2 ,.container #offerSquare3{
+#container #offerSquare1 ,#container #offerSquare2 ,#container #offerSquare3{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     display: block;
@@ -88,6 +244,9 @@ ul li:last-child{
 }
 
 
-.container{
+#container{
     display: flex;
 }
+
+
+ */
