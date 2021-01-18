@@ -14,6 +14,24 @@
   .col-12 {width: 100%;}
 }
 
+main{
+  
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.container1{
+margin-left: auto;
+margin-right: auto;
+display: block;
+
+}
+video{
+  margin-left: auto;
+margin-right: auto;
+display: block;
+}
 .nav {
   background-color: #251641;
   top: 0;
@@ -120,13 +138,15 @@
  margin-top: 15%;
 }
 
-.container #artID{
+#artID{
   height: 500px;
-  width: 450px;
-  margin-top: 23%;
+  width: 563px;
+  margin-top: 7%;
+  margin-left: 6%;
+ 
 }
 
-.container #artID fieldset{
+#artID fieldset{
 
   width: 92%;
   height: 65%;
@@ -135,7 +155,109 @@
   font-weight: bold;
   font-size: 20px;
   text-indent: 1px;
-  overflow:scroll;}
+  overflow:scroll;
+ 
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+  font-family: Roboto;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-distributed {
+  background-color: #251641;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+}
+
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 190px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #251641;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
 
 
 
