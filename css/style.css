@@ -34,11 +34,11 @@ h2{
     margin-left: auto;
     margin-right: auto;
     width: 45%;
-    background-color: #85b6f1;
+    background-color:whitesmoke;
     overflow: auto; 
  
 }
-.dropdown{
+#dropdown{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -47,7 +47,7 @@ h2{
 
 }
 
-.dropdown select, .dropdown select option {
+#dropdown select, #dropdown select option {
     padding : 5%;
     font-size: large;
     background-color: silver;
