@@ -10,6 +10,7 @@ var quanititiesArray=new Array(7).fill(0);
 
 
 
+
 function CustomerOrder(name, phone, address, choices, checkedValue, promo, total) {
     this.name = name;
     this.phone = phone;
@@ -66,6 +67,7 @@ function retrieveData(){
     }     
 
 }
+
 var formOrder = document.getElementById("order-from");
 formOrder.addEventListener('submit', addNewCustomer);
 var choices = [];
@@ -94,19 +96,24 @@ function addNewCustomer(event) {
     var promo = event.target.promo.value;
 
     var promoValue = 0;
+    var promoName = "";
 
     switch (promo) {
         case "ST30":
             promoValue = 0.3;
+            promoName = "ST30";
             break;
         case "TA15":
             promoValue = 0.15;
+            promoName = "TA15";
             break;
         case "AD10":
             promoValue = 0.1;
+            promoName = "AD10";
             break;
         default:
             promoValue = 1;
+            promoName = "None";
             break;
     }
 
@@ -118,7 +125,7 @@ function addNewCustomer(event) {
     // Ta 15% TA15
     // Admin 10% AD10
 
-    var customer = new CustomerOrder(name, phone, address, choices, quantity, promoValue, totalPrice);
+    var customer = new CustomerOrder(name, phone, address, choices, quantity, promoName, totalPrice);
 
 
 }
@@ -219,5 +226,9 @@ placeOrder.addEventListener('click', function (event) {
 });
 
 retrieveData();
+
+
+
+
 
 
