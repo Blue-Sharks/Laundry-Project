@@ -5,8 +5,8 @@ var washingItems = ['T-Shirts', 'Pants', 'Shorts', 'Formal Wear', 'Socks and Und
 var priceArray = [1, 1.5, 0.75, 2, 0.5, 1.5, 1];
 var placeOrder = document.getElementById("place-order");
 placeOrder.style.display = "none";
-var sumOfOrders = new Array(7).fill(0);
-var totalSales = 0;
+var combinedTotal=0;
+var quanititiesArray=new Array(7).fill(0);
 
 
 
@@ -18,46 +18,53 @@ function CustomerOrder(name, phone, address, choices, checkedValue, promo, total
     this.promo = promo;
     this.quantity = checkedValue;
     this.total = total;
-
+ 
     customerArray.push(this);
-
+    calculateTotalSales(this.total);
+    calculateTotalQuantities(this.quantity);
+    
 
 }
 
 // create local storage to store data 
 function customerData() {
     localStorage.setItem('customers', JSON.stringify(customerArray));
+    localStorage.setItem("Quantity-ordered", JSON.stringify(quanititiesArray));
+    localStorage.setItem("Total-Sales", JSON.stringify(combinedTotal));
    
 }
 
-// back up the data from localstorage to object array 
-function retrieveData() {
-    if (localStorage.length > 0) {
-        customerArray = JSON.parse(localStorage.getItem('customers'));
-        orderAccumalation(sumOfOrders, totalSales);
-        sumOfOrders = JSON.parse(localStorage.getItem('Sales-Quantities'));
-        totalSales = JSON.parse(localStorage.getItem('Total-Sales'));
-
-        console.log(sumOfOrders);
-        
-    }
+function calculateTotalSales(total){
+    combinedTotal+= total;
 }
 
-function orderAccumalation(sumOfOrders,totalSales ) {
-    var trymeArray=new Array(7).fill(0);
-    //console.log(sumOfOrders.length);
-    for (let index = 0; index < sumOfOrders.length; index++) {
-
-        totalSales+= sumOfOrders[index].total;
-        for (var j = 0; j < sumOfOrders.quantity.length; j++) {
-
-            trymeArray[j] += sumOfOrders[index].quantity[j];
-
-        }
+function calculateTotalQuantities(quantity){
+    for (let index = 0; index < quantity.length; index++) {
+        var sum = 0;
+        sum += quantity[index]; 
+        quanititiesArray[index] +=sum; 
     }
-    localStorage.setItem('Sales-Quantities', JSON.stringify(totalSales));
-    localStorage.setItem('Total-Sales', JSON.stringify(trymeArray));
-    
+
+
+}
+
+// back up the data from localstorage to object array 
+function retrieveData(){
+
+    if (localStorage.length>0){
+        for(var i = 0; i< localStorage.length; i++){
+            if(localStorage.key(i)==="customers" ){
+                customerArray= JSON.parse(localStorage.getItem("customers"));
+            }
+            else if(localStorage.key(i)==="Quantity-ordered" ){
+                quanititiesArray= JSON.parse(localStorage.getItem("Quantity-ordered"));
+            }
+            else if(localStorage.key(i)==="Total-Sales"){
+                combinedTotal= JSON.parse(localStorage.getItem("Total-Sales"));
+            }
+        }
+    }     
+
 }
 var formOrder = document.getElementById("order-from");
 formOrder.addEventListener('submit', addNewCustomer);
@@ -115,7 +122,6 @@ function addNewCustomer(event) {
 
 
 }
-// var newCustomer = new CustomerOrder("G", "077", "address", [0,1,2], [0,1,2], 0.3, 11);
 
 function renderReciept(promoValue) {
     placeOrder.style.display = "block";
@@ -174,9 +180,16 @@ function renderReciept(promoValue) {
         table.appendChild(footerRowOne);
         var footerColumnOne = document.createElement("th");
         footerColumnOne.setAttribute("colspan", "4");
-        footerColumnOne.textContent = "Total Before Discount : " + totalPrice + " JD";
+        footerColumnOne.textContent = "Total : " + totalPrice + " JD";
         footerRowOne.appendChild(footerColumnOne);
     } else {
+        var footerRowOne = document.createElement("tr");
+        table.appendChild(footerRowOne);
+        var footerColumnOne = document.createElement("th");
+        footerColumnOne.setAttribute("colspan", "4");
+        footerColumnOne.textContent = "Total : " + totalPrice + " JD";
+        footerRowOne.appendChild(footerColumnOne);
+
         var footerRowTwo = document.createElement("tr");
         table.appendChild(footerRowTwo);
 
@@ -206,3 +219,5 @@ placeOrder.addEventListener('click', function (event) {
 });
 
 retrieveData();
+
+
