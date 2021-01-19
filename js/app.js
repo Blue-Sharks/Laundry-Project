@@ -5,8 +5,8 @@ var washingItems = ['T-Shirts', 'Pants', 'Shorts', 'Formal Wear', 'Socks and Und
 var priceArray = [1, 1.5, 0.75, 2, 0.5, 1.5, 1];
 var placeOrder = document.getElementById("place-order");
 placeOrder.style.display = "none";
-var combinedTotal=0;
-var quanititiesArray=new Array(7).fill(0);
+var combinedTotal = 0;
+var quanititiesArray = new Array(7).fill(0);
 
 
 
@@ -19,11 +19,11 @@ function CustomerOrder(name, phone, address, choices, checkedValue, promo, total
     this.promo = promo;
     this.quantity = checkedValue;
     this.total = total;
- 
+
     customerArray.push(this);
     calculateTotalSales(this.total);
     calculateTotalQuantities(this.quantity);
-    
+
 
 }
 
@@ -32,39 +32,39 @@ function customerData() {
     localStorage.setItem('customers', JSON.stringify(customerArray));
     localStorage.setItem("Quantity-ordered", JSON.stringify(quanititiesArray));
     localStorage.setItem("Total-Sales", JSON.stringify(combinedTotal));
-   
+
 }
 
-function calculateTotalSales(total){
-    combinedTotal+= total;
+function calculateTotalSales(total) {
+    combinedTotal += total;
 }
 
-function calculateTotalQuantities(quantity){
+function calculateTotalQuantities(quantity) {
     for (let index = 0; index < quantity.length; index++) {
         var sum = 0;
-        sum += quantity[index]; 
-        quanititiesArray[index] +=sum; 
+        sum += quantity[index];
+        quanititiesArray[index] += sum;
     }
 
 
 }
 
 // back up the data from localstorage to object array 
-function retrieveData(){
+function retrieveData() {
 
-    if (localStorage.length>0){
-        for(var i = 0; i< localStorage.length; i++){
-            if(localStorage.key(i)==="customers" ){
-                customerArray= JSON.parse(localStorage.getItem("customers"));
+    if (localStorage.length > 0) {
+        for (var i = 0; i < localStorage.length; i++) {
+            if (localStorage.key(i) === "customers") {
+                customerArray = JSON.parse(localStorage.getItem("customers"));
             }
-            else if(localStorage.key(i)==="Quantity-ordered" ){
-                quanititiesArray= JSON.parse(localStorage.getItem("Quantity-ordered"));
+            else if (localStorage.key(i) === "Quantity-ordered") {
+                quanititiesArray = JSON.parse(localStorage.getItem("Quantity-ordered"));
             }
-            else if(localStorage.key(i)==="Total-Sales"){
-                combinedTotal= JSON.parse(localStorage.getItem("Total-Sales"));
+            else if (localStorage.key(i) === "Total-Sales") {
+                combinedTotal = JSON.parse(localStorage.getItem("Total-Sales"));
             }
         }
-    }     
+    }
 
 }
 
