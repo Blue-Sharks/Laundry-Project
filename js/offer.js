@@ -1,25 +1,44 @@
 "use Strict";
 
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+
 var dropDown = document.getElementById("dropDown");
 var container = document.getElementById("container");
 var offerSquare1 = document.getElementById("offerSquare1");
 var offerSquare2 = document.getElementById("offerSquare2");
 var offerSquare3 = document.getElementById("offerSquare3");
 
-var list = document.createElement("ul");
-var h2 = document.createElement("h2");
+offerSquare1.style.display= 'none';
+offerSquare2.style.display= 'none';
+offerSquare3.style.display= 'none';
+// var list = document.createElement("ul");
+// var h2 = document.createElement("h2");
 
-container.appendChild(offerSquare1);
-container.appendChild(offerSquare2);
-container.appendChild(offerSquare3);
+// container.appendChild(offerSquare1);
+// container.appendChild(offerSquare2);
+// container.appendChild(offerSquare3);
 
-var clothes = ["Shirts", "Jackects", "Pants", "Skirt/Dress"];
+
 
 dropDown.addEventListener("change", RenderOffer2);
 
 function RenderOffer2 () {
   switch (dropDown.options[dropDown.selectedIndex].value) {
-    case `TA's Offers`:
+    case `Teacher Assisstant`:
       // offerSquare1.style.visibility = 'visible';
       // offerSquare2.style.visibility = 'hidden';
       // offerSquare3.style.visibility = 'hidden';
@@ -28,20 +47,24 @@ function RenderOffer2 () {
       offerSquare3.style.display= 'none';
       break;
   
-    case `Student's Offers`:
+    case `Student`:
       offerSquare1.style.display= 'none';
       offerSquare2.style.display= 'block';
       offerSquare3.style.display= 'none';
       break;
   
-    case `Adminstrator Offers`:
+    case `Adminstrator`:
       offerSquare1.style.display= 'none';
       offerSquare2.style.display= 'none';
       offerSquare3.style.display= 'block';
       break;
-      
     default:
+      offerSquare1.style.display= 'none';
+      offerSquare2.style.display= 'none';
+      offerSquare3.style.display= 'none';
       break;
+      
+  
   }
 
 }
@@ -98,17 +121,4 @@ function RenderOffer2 () {
 //   }
 // }
 
-var slideIndex = 0;
-showSlides();
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
