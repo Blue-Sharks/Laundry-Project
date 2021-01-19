@@ -7,6 +7,7 @@ var quanititiesArray=new Array(7).fill(0);
 var chart = document.getElementById("bar-chart").getContext('2d');
 var statistics = document.getElementById("show-statistics");
 var showTable = document.getElementById('show-table');
+var ownersTable = document.getElementById('owner-table');
 
 
 function retrieveData(){
@@ -80,7 +81,6 @@ statistics.addEventListener("submit", function(event){
 });
 
 function renderTable(){
-var ownersTable = document.getElementById('owner-table');
 ownersTable.setAttribute("border","1");
 var tableHeader = document.createElement("tr");
 ownersTable.appendChild(tableHeader);
@@ -151,6 +151,7 @@ for(var j = 0 ;j <customerArray.length; j++){
 }
 showTable.addEventListener('submit', function(event){
     event.preventDefault();
+    ownersTable.innerHTML="";
     retrieveData();
     renderTable();
 });
