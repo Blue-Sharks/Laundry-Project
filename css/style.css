@@ -13,15 +13,17 @@ Pinned by osama yousef
 Pinned by osama yousef
 2:14
     highlight text Dark back ground : #95E7B6 */
-    *{
-        box-sizing: border-box;
-    }
-h2{
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
     color: #CFEC12;
     background-color: #0A2A73;
     font-size: x-large;
     font-weight: 700;
-    padding: 3px;
+    padding: 8px;
     text-align: center;
 }
 
@@ -29,34 +31,29 @@ h2{
     display: block;
 }
 
-.image img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 45%;
-    background-color: #85b6f1;
-    overflow: auto; 
- 
+#sec1 {
+    height: 300px;
+    width: 100%;
 }
-#dropdown{
+
+#dropdown {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
-    padding-top: 5%;
-
+    padding-top: 1%;
+    top: 50px;
 }
 
 #dropdown select, #dropdown select option {
-    padding : 5%;
+    padding: 5%;
     font-size: large;
     background-color: silver;
     color: #0A2A73;
     font-weight: 900;
 }
 
-
-.container #offerSquare1 ,.container #offerSquare2 ,.container #offerSquare3{
+.container #offerSquare1, .container #offerSquare2, .container #offerSquare3 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     display: block;
@@ -65,84 +62,126 @@ h2{
     width: 50%;
     margin: 2%;
     border-radius: 50%;
-  
+    animation-direction: alternate;
 }
 
- ul  {
+
+
+ul {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    background-color:#DF7070;
+    background-color: #DF7070;
     position: relative;
     padding: 20px;
-
 }
-ul li{
+
+ul li {
     list-style-type: square;
     color: #D3F10D;
     font-size: x-large;
     font-weight: 700;
     margin-left: 5%;
     border-radius: 10px;
-
 }
-ul li:last-child{
+
+ul li:last-child {
     padding-bottom: 80px;
 }
 
-
-.container{
+.container {
     display: flex;
     transition: 1s;
     transform-style: preserve-3d;
     position: relative;
     animation: moving ease-in-out 1s infinite alternate;
     border-radius: 10px;
-border: 1px solid red;
-    
+    top: 75px;
 }
-.circle_container{
-    height: 25vw;
-    width: 25vw;
-    border-radius: 40vw;
-    border:1vw solid #0A2A73;
-    margin: auto;
-  }
-  .inside_circle{
-    height: 20vw;
-    width: 20vw;
-    border-radius: 23vw;
-  
-    background-color: #E6F3FE;
-    margin: auto;
-    margin-top: 4%;
-  
-  
-  }
-  .inside_circle_text{
-    font-size: 3.0vw;
-    font-family :"arial black", arial-w01-black, arial-w02-black, "arial-w10 black", sans-serif;
-     /* margin: 4%; */
-     margin-top: 7%;
-  
-    width:18vw;
-    position: absolute;
-  
-    box-sizing: border-box;
-    /* line-height: 60px; */
-    word-break:break-all;
-    text-align: center;
-    z-index: 30;
-    color:  #D3F10D;
-  }
-  .clothes{
-    /* margin-left: 80px; */
-    height: 20vw;
-    width: 20vw;
-    /* text-align: center; */
-    overflow: auto;
-    /* object-fit: cover; */
-    /* position: relative; */
-    margin-left: 0%;
-    margin-top: 3%;
-  }
 
+/* slide image section*/
+
+.mySlides {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    /* vertical-align: middle; */
+    height: 100%;
+    width: 100%;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    height: 100%;
+}
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
