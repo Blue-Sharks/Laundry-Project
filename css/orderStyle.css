@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Orbitron:wght@400&display=swap');
 
 /* ========================================================================== */
-.nav {
+/* .nav {
     position: sticky;
     background-color: #251641;
     top: 0;
@@ -65,8 +65,62 @@
 
   h1 img{
     width: 40%;
-    /* height: 100%; */
+  
+  } */
+
+  *{
+    margin:0;
+    padding:0;
   }
+  header {
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top:0;
+    left:0;
+    background-color: #251641;
+    transition: 250ms linear;
+  }
+  
+  .logo-container, .nav-links{
+    display: flex;
+  
+  }
+  .logo-container{
+    flex:1;
+  }
+  #header-img{
+    width: 30%;
+    height: 11vh;
+    margin-left: 5px;
+  }
+  nav{
+    align-items: flex-end;
+    flex: 1;
+  }
+  .nav-links{
+    justify-content: space-around;
+    list-style: none;
+  }
+  .nav-link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14pt;
+    font-family: 'Orbitron', sans-serif;
+    
+  }
+  nav a.current,
+  nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
+  }
+  ul li{
+    font-family: 'Orbitron', sans-serif;
+    word-wrap:break-word;
+      white-space: normal;
+    }
   /* ====================================================== End of Nav*/
 
 
@@ -284,8 +338,9 @@
 }
 
 #place-order{
-  margin-left: 35px;
-  margin-top: 5px;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /*============================================Table Osama*/
@@ -297,7 +352,9 @@
 
 #reciept table {
   width: 80%;
- text-align: center;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
   border: 1px solid black;
 }
 

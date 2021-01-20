@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
     crossorigin="anonymous" />
     <title>Offers</title>
@@ -17,9 +14,8 @@
 <body>
 
     
-    <header>
 
-
+    <!-- <header>
         <nav class="nav">
             <div class="container">
                 <h1 class="logo"><a href="#"><img src="/img/Logo.png"></a></h1>
@@ -33,9 +29,32 @@
             </div>
         </nav>
 
-
+    </header> -->
+    <header id="header">
+        <div id="logo-container">
+            <img id="header-img" src="../img/logo.png" alt="">
+        </div>
+        <nav id="nav-bar">
+            <ul class="nav-links">
+                <li>
+                    <a href="../Index.html" class="nav-link "> Home</a>
+                </li>
+                <li>
+                    <a href="order.html" class="nav-link">Page Order</a>
+                </li>
+                <li>
+                    <a href="offers.html" class="nav-link current">Daily Offer</a>
+                </li>
+                <li>
+                    <a href="stats.html" class="nav-link">Statistics</a>
+                </li>
+                <li>
+                    <a href="aboutUs.html" class="nav-link">About us</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-
+  
    
     <section id="section-slider">
         <div class="slideshow-container">
@@ -60,10 +79,10 @@
     <section id='sec1' class="dropdwon-section">
      
             <select id='dropDown'>
-                <option>Select Your Category</option>
-                <option>Teacher Assisstant</option>
-                <option>Student</option>
-                <option>Adminstrator</option>
+                <option class="option">Select Your Category</option>
+                <option class="option">Teacher Assisstant</option>
+                <option class="option">Student</option>
+                <option class="option">Adminstrator</option>
             </select>
        
 
@@ -133,7 +152,7 @@
             </div>
 
         </div>
-        <hr>
+
         </div>
         <p class="copyright">Laundry Shark © 2021</p>
         </div>

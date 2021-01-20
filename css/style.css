@@ -4,17 +4,21 @@
   /* ======================== */
   * {
     box-sizing: border-box;
+    margin:0;
+    padding: 0;
   }
 
 
 /* ========================================================================== */
-.nav {
+
+/* .nav {
     position: sticky;
     background-color: #251641;
     top: 0;
     left: 0;
-    right: 0;
-    transition: all 0.3s ease-in-out;
+    right: 0; 
+    transition: all 0.3s ease-in-out; 
+
   }
   
   .nav .container {
@@ -24,7 +28,18 @@
     align-items: center;
     padding: 10px 0;
     transition: all 0.3s ease-in-out;
+ 
     
+  }
+  .logo{
+
+    width: 40%;
+    float: left;
+
+  }
+  .logo img{
+    width: 40%;
+
   }
   
   .nav ul {
@@ -60,19 +75,64 @@
     font-weight: bold;
   }
   .nav .container ul li{
-    font-size: 19pt;
+    font-size: 14pt;
   
   }  
  
   ul li{
     font-family: 'Orbitron', sans-serif;
     word-wrap:break-word;
-      white-space: normal;}
+      white-space: normal;
+    } */
 
-  h1 img{
-    width: 40%;
-    /* height: 100%; */
+    header {
+      width: 100%;
+      height: 13vh;
+      display: flex;
+      align-items: center;
+      /* position:sticky; */
+      top:0;
+      left:0;
+      background-color: #251641;
+      transition: 250ms linear;
   }
+  
+  .logo-container, .nav-links{
+      display: flex;
+  
+  }
+  .logo-container{
+      flex:1;
+  }
+  #header-img{
+      width: 30%;
+      height: 11vh;
+      margin-left: 5px;
+  }
+  nav{
+      align-items: flex-end;
+      flex: 1;
+  }
+  .nav-links{
+      justify-content: space-around;
+      list-style: none;
+  }
+  .nav-link{
+      text-decoration: none;
+      color: #fff;
+      font-size: 14pt;
+      font-family: 'Orbitron', sans-serif;
+  }
+  nav a.current,
+  nav a:hover {
+    color: #c0392b;
+    font-weight: bold;
+  }
+  ul li{
+    font-family: 'Orbitron', sans-serif;
+    word-wrap:break-word;
+      white-space: normal;
+    }
 
   /* =========================================================== */
   
@@ -169,6 +229,10 @@ p {
   font-size: 17pt;
   text-align: center;
   
+}
+
+.copyright{
+  text-align: center;
 }
 /* ========================================================== */
 /* ===========slider */
@@ -290,14 +354,40 @@ p {
   font-family: 'Orbitron', sans-serif;
 
 }
+.offer-one p{
+  text-align:justify;
+}
+
 .offer-one p span{
   color: maroon;
   font-size: 20px;
   font-family: 'Orbitron', sans-serif;
+  text-align:center;
 }
 
 
   
+/* ================================= dropdwon select */
 
+#dropDown {
+  width: 20%;
+  height: 50px;
+  overflow: hidden;
+  border: 2px double #5ADDE6;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  background: #0A2A73;
+  color:#5adde6;
+  font-size: 12pt;
+  text-align-last:center;
+  font-family: 'Cinzel', serif;
+}
 
-  
+#dropDown select {
+  background: transparent;
+  -webkit-appearance: none;
+  width: 100px;
+  font-size: 11px;
+  border: 0;
+}

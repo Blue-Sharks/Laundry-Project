@@ -15,20 +15,24 @@
 }
 
 #buttonId button{
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: center;
     background-color:#44D382;
     color: #0A2A73;
     border-radius: 15px;
     padding: 10px;
     font-size: 25px;
-    width: 230px;
+    width: 430px;
     margin-top: 5%;
 }
-#buttonId {
+ #buttonId {
     text-align: center;
    
 }
+#buttonId a{
+  text-decoration: none;
+}
+/*
 #buttonId button {
     transition-duration: 0.4s;
   }
@@ -43,10 +47,10 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
-  
+   */
   
   /* ========================================================================== */
-  .nav {
+  /* .nav {
     position: sticky;
     background-color: #251641;
     top: 0;
@@ -99,7 +103,64 @@
   }
   .nav .container ul li{
     font-size: 19pt;
-  }  
+  }   */
+
+
+
+
+  *{
+    margin:0;
+    padding:0;
+}
+header {
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    /* position:sticky; */
+    top:0;
+    left:0;
+    background-color: #251641;
+    transition: 250ms linear;
+}
+
+.logo-container, .nav-links{
+    display: flex;
+
+}
+.logo-container{
+    flex:1;
+}
+#header-img{
+    width: 30%;
+    height: 11vh;
+    margin-left: 5px;
+}
+nav{
+    align-items: flex-end;
+    flex: 1;
+}
+.nav-links{
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14pt;
+    font-family: 'Orbitron', sans-serif;
+}
+nav a.current,
+nav a:hover {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+
+
+
+
+
   /* ====================================================== End of Nav*/
   a {
     color: black;
@@ -120,6 +181,7 @@
     padding-bottom: 5%;
     font-family: 'Cinzel', serif;
     font-weight: 600;
+    
   }
   .middle-section {
     width: 100%;
@@ -128,6 +190,7 @@
     justify-content: space-evenly;
   }
 
+  
 #middlebox, #rightbox, #leftbox{ 
     /* float:left;    */
     width:28%; 
@@ -142,9 +205,12 @@ p {
   font-family: 'Cinzel', serif;
   font-weight: 600;
   font-size: 17pt;
-  text-align: center;
+  /* text-align: center; */
+  text-align:justify;
   
 }
+
+
 
  div ul{
   width: 300px;
@@ -210,6 +276,9 @@ ul li{
 .container1 .about-paraghraph {
   margin-top: 40px;
   width: 35%;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 17pt;
 }
 .container1 .about-links{
   margin-top: 15px;
@@ -238,4 +307,63 @@ ul li{
 }
 .container1 .about-links ul li h3{
  font-size: 18pt;
+}
+
+/* ==============button */
+.glow-on-hover {
+  width: 420px;
+  height: 65px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #3e8e41;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }

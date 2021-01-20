@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="../css/aboutus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
 </head>
 
+
 <body>
-    <header>
+    <!-- <header>
         <nav class="nav">
             <div class="container">
                 <h1 class="logo"><a href="#">My Website</a></h1>
@@ -24,49 +28,71 @@
                 </ul>
             </div>
         </nav>
+    </header> -->
+    <header id="header">
+        <div id="logo-container">
+            <img id="header-img" src="../img/logo.png" alt="">
+        </div>
+        <nav id="nav-bar">
+            <ul class="nav-links">
+                <li>
+                    <a href="../Index.html" class="nav-link"> Home</a>
+                </li>
+                <li>
+                    <a href="order.html" class="nav-link">Page Order</a>
+                </li>
+                <li>
+                    <a href="offers.html" class="nav-link">Daily Offer</a>
+                </li>
+                <li>
+                    <a href="stats.html" class="nav-link">Statistics</a>
+                </li>
+                <li>
+                    <a href="aboutUs.html" class="nav-link current">About us</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
 
-    <main>
-      
-            <div >
-                <video width="600" height="400"  autoplay loop muted>
-                    <source src="../video/about-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-                <div id="artID">
-                    <fieldset>
-                        <legend>Who Are We</legend>
 
-                        <p> Pick up and delivery
-                            Allow google maps to guide your pickup and drop off location. You will be notified once
-                            pickup /
-                            drop off has been dispatched. Use our app to track the progress of your order. For tracking,
-                            please login into your HobyClean account.Pick up and delivery
-                            Allow google maps to guide your pickup and drop off location. You will be notified once
-                            pickup /
-                            drop off has been dispatched. Use our app to track the progress of your order. For tracking,
-                            please login into your HobyClean account
-                            Allow google maps to guide your pickup and drop off location. You will be notified once
-                            pickup /
-                            drop off has been dispatched. Use our app to track the progress of your order. For tracking,
-                            please login into your HobyClean account
-                            Allow google maps to guide your pickup and drop off location. You will be notified once
-                            pickup /
-                            drop off has been dispatched. Use our app to track the progress of your order. For tracking,
-                            please login into your HobyClean account
-                        </p>
-                    </fieldset>
-                </div>
-                
-           
-        
+    <sectioon class="promo-video">
+       
+        <div id="artID">
+            <video width="600" height="400" autoplay loop muted>
+                <source src="../video/about-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h1>Who Are We</h1>
+
+            <p> Pick up and delivery
+                Allow google maps to guide your pickup and drop off location. You will be notified once
+                pickup /
+                drop off has been dispatched. Use our app to track the progress of your order. For tracking,
+                please login into your HobyClean account.Pick up and delivery
+                Allow google maps to guide your pickup and drop off location. You will be notified once
+                pickup /
+                drop off has been dispatched. Use our app to track the progress of your order. For tracking,
+                please login into your HobyClean account
+                Allow google maps to guide your pickup and drop off location. You will be notified once
+                pickup /
+                drop off has been dispatched. Use our app to track the progress of your order. For tracking,
+                please login into your HobyClean account
+                Allow google maps to guide your pickup and drop off location. You will be notified once
+                pickup /
+                drop off has been dispatched. Use our app to track the progress of your order. For tracking,
+                please login into your HobyClean account
+            </p>
+
         </div>
+    </sectioon>
 
-        <h2></h2>
 
+
+
+
+    <section class="team">
         <div id="mainId">
             <div class="container">
                 <img src="../img/ahmad.jpg" alt="Avatar" class="image">
@@ -88,21 +114,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div id="secMainId">
-
-            <div class="container">
-                <img src="../img/ahmad.jpg" alt="Avatar" class="image">
-                <div class="overlay">
-                    <div class="text">
-                        Name:Ahmad Al-frijat <br><br>
-                        Mobil # : 0779089028 <br><br>
-                        E-mail:ahmadalfrijat7@gmail.com
-                    </div>
-                </div>
-            </div>
-
             <div class="container">
                 <img src="../img/ahmad.jpg" alt="Avatar" class="image">
                 <div class="overlay">
@@ -116,7 +127,16 @@
         </div>
 
         <div id="secMainId">
-
+            <div class="container">
+                <img src="../img/ahmad.jpg" alt="Avatar" class="image">
+                <div class="overlay">
+                    <div class="text">
+                        Name:Ahmad Al-frijat <br><br>
+                        Mobil # : 0779089028 <br><br>
+                        E-mail:ahmadalfrijat7@gmail.com
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <img src="../img/ahmad.jpg" alt="Avatar" class="image">
                 <div class="overlay">
@@ -139,42 +159,80 @@
                 </div>
             </div>
         </div>
-    </main>
-<footer>
-    <section></section>
+    </section>
 
-		<footer class="footer-distributed">
 
-			<div class="footer-right">
+    <!-- <footer>
+        <section></section>
+
+        <footer class="footer-distributed">
+
+            <div class="footer-right">
                 <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
-                    class="icon ion-social-twitter"></i></a><a href="#"><i
-                    class="icon ion-social-snapchat"></i></a><a href="#"><i
-                    class="icon ion-social-instagram"></i></a></div>
-    </div>
-			</div>
+                            class="icon ion-social-twitter"></i></a><a href="#"><i
+                            class="icon ion-social-snapchat"></i></a><a href="#"><i
+                            class="icon ion-social-instagram"></i></a></div>
+            </div>
+            </div>
 
-			<div class="footer-left">
+            <div class="footer-left">
 
-				<p class="footer-links">
-					<a class="link-1" href="home.html">Home</a>
+                <p class="footer-links">
+                    <a class="link-1" href="home.html">Home</a>
 
-					<a href="#">Offers</a>
+                    <a href="#">Offers</a>
 
-					<a href="#">Order Page</a>
+                    <a href="#">Order Page</a>
 
-					<a href="aboutUs.html">About</a>
+                    <a href="aboutUs.html">About</a>
 
-					<a href="#">Statistics</a>
+                    <a href="#">Statistics</a>
 
-					<a href="#">Contact</a>
-				</p>
+                    <a href="#">Contact</a>
+                </p>
 
-				<p>Laundry Shark &copy; 2021</p>
-			</div>
+                <p>Laundry Shark &copy; 2021</p>
+            </div>
 
-		</footer>
-</footer>
+        </footer>
+    </footer> -->
+    <footer class="footer-dark">
+        <div class="container1">
+            <div class="about-links">
 
+                <ul>
+                    <li>
+                        <h3>About</h3>
+                    </li>
+                    <li><a href="home.html">Company</a></li>
+                    <li><a href="aboutUs.html">Team</a></li>
+                    <li><a href="#">Offers</a></li>
+                </ul>
+            </div>
+
+            <div class="about-paraghraph">
+                <p>No change? No problem! <br>
+                    Laundry Shark understands that consumers today have more choices, more mobility, and less time than
+                    ever before.</p>
+            </div>
+            <div class="social-media">
+                <ul>
+
+                    <li> <a href="#" title="FaceBook"><i class="fab fa-facebook-square"></i></a></li>
+                    <li> <a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                    <li> <a href="#"><i class="fab fa-tiktok"></i></a></li>
+                    <li> <a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li> <a href="#"><i class="fab fa-whatsapp-square"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <hr>
+        </div>
+        <p class="copyright">Laundry Shark © 2021</p>
+        </div>
+
+    </footer>
     <script src="js/Footerscript.js"></script>
 </body>
 
